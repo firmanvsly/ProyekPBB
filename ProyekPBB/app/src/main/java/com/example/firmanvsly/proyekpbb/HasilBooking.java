@@ -19,12 +19,12 @@ public class HasilBooking extends AppCompatActivity {
         String wkt = getIntent().getStringExtra("waktu");
 
         nama = (TextView) findViewById(R.id.tvPesan);
-        billing = (TextView) findViewById(R.id.tvBilling);
+        billing = (TextView) findViewById(R.id.tvWarnet);
         tanggal = (TextView) findViewById(R.id.tvTanggal);
         waktu = (TextView) findViewById(R.id.tvWaktu);
 
         nama.setText(nm+" memesan pada:");
-        billing.setText("Billing: "+bil);
+        billing.setText("Warnet: "+bil);
         tanggal.setText("Tanggal: "+tgl);
         waktu.setText("Waktu: "+wkt);
 

@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".BookingActivity" />
-        <activity android:name=".HasilBooking"></activity>
+        <activity android:name=".HasilBooking" />
+        <activity android:name=".WarnetActivity"/>
+        <activity android:name=".DetailActivity"/>
     </application>
 
 </manifest>

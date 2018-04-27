@@ -1,10 +1,8 @@
 <resources>
-    <string name="app_name">TugasDateTime</string>
-    <string-array name="billing">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
+    <string name="app_name">Dota 2</string>
+    <string name="action_settings">Settings</string>
+    <string name="item_title">Invoker</string>
+    <string name="item_desc">Invoker merupakan salah satu hero yang bisa dibilang cukup sulit untuk dipelajari</string>
+    <string name="hero_desc">Invoker merupakan salah satu hero yang bisa dibilang cukup sulit untuk dipelajari tetapi hero ini merupakan hero yang cukup penting dalam dunia dota 2. Hero ini dapat menaikan attribute yang dapat dipilih oleh player menurut situasi dari lineup lawan maupun team sendiri. Attribute tersebut adalah Quas,Wex dan Exort.
+    </string>
 </resources>

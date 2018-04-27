@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvBilling = (TextView) findViewById(R.id.tvBilling);
+        tvBilling = (TextView) findViewById(R.id.tvWarnet);
         tvBooking = (TextView) findViewById(R.id.tvBooking);
         tvBilling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Belum ada fungsi", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this,WarnetActivity.class));
             }
         });
         tvBooking.setOnClickListener(new View.OnClickListener() {

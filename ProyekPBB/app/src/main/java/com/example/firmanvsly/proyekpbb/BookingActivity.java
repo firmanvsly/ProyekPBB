@@ -27,7 +27,7 @@ public class BookingActivity extends AppCompatActivity {
     EditText etNama, etTanggal, etWaktu;
     Button btnTanggal, btnWaktu, btnPesan;
     SimpleDateFormat dateFormat;
-    String[] billing;
+    String[] warnet;
     int index;
 
     @Override
@@ -45,9 +45,9 @@ public class BookingActivity extends AppCompatActivity {
         btnPesan = (Button) findViewById(R.id.btnPesan);
         Spinner s1 = (Spinner) findViewById(R.id.spinner);
 
-        billing = getResources().getStringArray(R.array.billing);
+        warnet = getResources().getStringArray(R.array.warnet);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,billing);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,warnet);
 
         s1.setAdapter(adapter);
         s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -87,7 +87,7 @@ public class BookingActivity extends AppCompatActivity {
                     Toast.makeText(BookingActivity.this,"Harap Diisi Semua",Toast.LENGTH_SHORT).show();
                 }else{
                     pesan.putExtra("nama",strNama);
-                    pesan.putExtra("billing", billing[index]);
+                    pesan.putExtra("billing", warnet[index]);
                     pesan.putExtra("tanggal",strTanggal);
                     pesan.putExtra("waktu",strWaktu);
                     startActivity(pesan);
