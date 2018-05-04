@@ -20,7 +20,9 @@
         <activity android:name=".BookingActivity" />
         <activity android:name=".HasilBooking" />
         <activity android:name=".WarnetActivity" />
-        <activity android:name=".DetailActivity" />
+        <activity
+            android:name=".DetailActivity"
+            android:theme="@style/AppThemeMaterial"/>
         <activity android:name=".MainActivity"/>
     </application>
 

@@ -25,15 +25,12 @@
         <item>Mila Net berada di karanganyar</item>
     </string-array>
     <string-array name="hero_details">
-        <item>Invoker merupakan salah satu hero yang bisa dibilang cukup sulit untuk dipelajari tetapi hero ini merupakan hero yang cukup penting dalam dunia dota 2. Hero ini dapat menaikan attribute yang dapat dipilih oleh player menurut situasi dari lineup lawan maupun team sendiri. Attribute tersebut adalah Quas,Wex dan Exort.
-        </item>
-        <item>Outworld Devourer mengandalkan tingkat intelligence dan mana pool-nya untuk memberikan serangan yang mematikan pada lawannya. Skill Arcane Orb dan Astral Imprisonment dapat mencuri intelligance lawannya. Sedangkan skill Essence Aura dan  Sanity Eclipse memasikan kalian dapat melakukan nuke tanpa takut kehabisan mana!</item>
-        <item>Shadow Fiend adalah hero midlane dengan tipe serangan jarak jauh. Makhluk astral berwarna hitam ini memiliki skill aktif yang unik yaitu tersedianya 3 Shadow Raze dengan damage yang besar serta Requelm of Souls sebagai skill pamungkasnya. Skill pasif yang dimiliki juga tidak kalah berbahayanya yaitu memberikan tambahan damage dengan skill Necromastery serta pengurangan armor musuh berkat skill Presence of The Dark Lord.
-        </item>
-        <item>Storm Spirit seringkali ditempatkan sebagai carry di mid lane memiliki kemampuan untuk melakukan disable musuh lewat skill Electric Vortex juga kemampuan nuke dari skill Static Remnant dan Overload. Storm Spirit juga sangat licin berkat skill Ball Lighting yang memungkinkannya mengeksekusi lawan dan kabur dengan cepat.</item>
-        <item>Templar Assassin merupakan hero beratribut utama agility dan memiliki tipe serangan ranged. Walaupun memiliki serangan ranged berkat skill Psi Blade-nya, hero ini sering kali bertarung dengan jarak yang cukup dekat. Namun hal tersebut bukan masalah berkat skill lainnya milik Lanaya yaitu Refraction, Meld, dan Psionic Trap.</item>
-        <item>Tinker merupakan hero beratribut utama intelligence dengan tipe serangan ranged. Keunggulan Tinker terletak pada kemampuannya untuk mengeluarkan burst damage yang besar. Tinker sangat cocok dipilih bila kalian melawan hero dengan evasion yang tinggi seperti Phantom Assassins atau Wind Ranger. Namun kalian perlu tangan yang lihai agar dapat mengeksekusi mereka dengan cepat!
-        </item>
+        <item>Ju Net berada di pecuk</item>
+        <item>Kor Net berada di karang sinom</item>
+        <item>Bizz Net berada di pekandangan</item>
+        <item>Berkah Net berada di skober</item>
+        <item>Griya Net berada di margadadi</item>
+        <item>Mila Net berada di karanganyar</item>
     </string-array>
     <array name="hero_picture">
         <item>@drawable/a</item>
