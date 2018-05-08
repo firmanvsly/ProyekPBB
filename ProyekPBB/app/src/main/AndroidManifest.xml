@@ -21,7 +21,7 @@
         <activity android:name=".HasilBooking" />
         <activity android:name=".WarnetActivity" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".WarnetDetail"
             android:theme="@style/AppThemeMaterial"/>
         <activity android:name=".MainActivity"/>
     </application>

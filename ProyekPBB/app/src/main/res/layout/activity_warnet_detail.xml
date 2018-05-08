@@ -26,12 +26,12 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/detail_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:background="@drawable/a"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
+                android:transitionName="example_transition"
                 app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar
@@ -58,18 +58,20 @@
             android:paddingTop="@dimen/md_keylines">
 
             <TextView
+                android:id="@+id/detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="?attr/colorAccent"
+                android:layout_marginBottom="@dimen/md_keylines"
                 android:text="Title"
-                android:textSize="@dimen/article_titles"
-                android:layout_marginBottom="@dimen/md_keylines" />
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/hero_detail"
+                android:id="@+id/detail_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Description" />
+                tools:text="Description"
+                android:textSize="18sp"/>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
