@@ -1,6 +1,6 @@
 package com.example.firmanvsly.proyekpbb;
 
-public class AppVar {
+public class Server {
 
     public static final String URL = "http://192.168.43.50/proyekpbb/";
     public static final String LOGIN_URL = "http://192.168.43.50/proyekpbb/login.php";

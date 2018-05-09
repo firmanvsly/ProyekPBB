@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,8 +19,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.w3c.dom.Text;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextUsername, editTextPassword;
     private TextView skip;
     private Context context;
-    private AppCompatButton buttonLogin;
+    private Button buttonLogin, buttonRegister;
     private ProgressDialog pDialog;
     SharedPreferences sharedpreferences;
     Boolean session = false;
@@ -52,7 +50,8 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword = (EditText) findViewById(R.id.etPassword);
         skip = (TextView) findViewById(R.id.tvSkip);
 
-        buttonLogin = (AppCompatButton) findViewById(R.id.buttonLogin);
+        buttonLogin = (Button) findViewById(R.id.btnLogin);
+        buttonRegister = (Button) findViewById(R.id.btnRegister);
 
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
@@ -79,6 +78,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
             }
         });
+
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+            }
+        });
     }
 
     private void login(){
@@ -86,11 +92,11 @@ public class LoginActivity extends AppCompatActivity {
         final String password = editTextPassword.getText().toString().trim();
         pDialog.setMessage("Login Process...");
         showDialog();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppVar.LOGIN_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.LOGIN_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        if (response.contains(AppVar.LOGIN_SUCCESS)) {
+                        if (response.contains(Server.LOGIN_SUCCESS)) {
                             hideDialog();
                             SharedPreferences.Editor editor = sharedpreferences.edit();
                             editor.putBoolean(session_status, true);
@@ -115,8 +121,8 @@ public class LoginActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
 
-                params.put(AppVar.KEY_USER, username);
-                params.put(AppVar.KEY_PASSWORD, password);
+                params.put(Server.KEY_USER, username);
+                params.put(Server.KEY_PASSWORD, password);
 
                 return params;
             }

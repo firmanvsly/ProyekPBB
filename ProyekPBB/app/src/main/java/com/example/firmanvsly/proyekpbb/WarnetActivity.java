@@ -27,7 +27,7 @@ import java.util.List;
 
 public class WarnetActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
-    private String url = AppVar.URL + "warnet.php";
+    private String url = Server.URL + "warnet.php";
 
     WarnetAdapter mAdapter;
     SearchView searchView;
@@ -98,7 +98,7 @@ public class WarnetActivity extends AppCompatActivity implements SwipeRefreshLay
                                 warnetList.add(new Warnet(
                                         product.getInt("id_warnet"),
                                         product.getString("nama"),
-                                        product.getString("deskripsi"),AppVar.URL+"/image/"+
+                                        product.getString("deskripsi"), Server.URL+"/image/"+
                                         product.getString("gambar")
                                 ));
                             }

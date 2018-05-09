@@ -45,7 +45,7 @@ public class BookingActivity extends AppCompatActivity {
         btnPesan = (Button) findViewById(R.id.btnPesan);
         Spinner s1 = (Spinner) findViewById(R.id.spinner);
 
-        warnet = getResources().getStringArray(R.array.warnet);
+        warnet = new String[]{"Ju Net", "Kor Net", "Bizz Net", "Berkah Net", "Griya Net"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,warnet);
 
