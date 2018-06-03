@@ -12,12 +12,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView warnet,booking,logout;
+    ImageView warnet,booking,logout,profile;
     public final static String TAG_USERNAME = "username";
     public final static String TAG_ID = "id";
+    public final static String TAG_NAME = "nama";
 
     SharedPreferences sharedpreferences;
-    String id,username;
+    String id,username,name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +29,20 @@ public class MainActivity extends AppCompatActivity {
 
         id = getIntent().getStringExtra(TAG_ID);
         username = getIntent().getStringExtra(TAG_USERNAME);
+        name = getIntent().getStringExtra(TAG_NAME);
 
         warnet = (ImageView) findViewById(R.id.ivWarnet);
         booking = (ImageView) findViewById(R.id.ivBooking);
         logout = (ImageView) findViewById(R.id.ivLogout);
+        profile = (ImageView) findViewById(R.id.ivProfile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                intent.putExtra(TAG_ID,id);
+                startActivity(intent);
+            }
+        });
         warnet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,BookingActivity.class));
+                Intent intent = new Intent(MainActivity.this,BookingActivity.class);
+                intent.putExtra(TAG_ID,id);
+                intent.putExtra(TAG_NAME,name);
+                startActivity(intent);
             }
         });
         logout.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 editor.putBoolean(LoginActivity.session_status, false);
                 editor.putString(TAG_ID, null);
                 editor.putString(TAG_USERNAME, null);
+                editor.putString(TAG_NAME, null);
                 editor.commit();
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 finish();

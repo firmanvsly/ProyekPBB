@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog pDialog;
     Button register;
     TextView login;
-    EditText userName, userPassword, userPassword2, userEmail;
+    EditText name, userName, userPassword, userPassword2, userEmail;
     Intent intent;
 
     int success;
@@ -64,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         login = (TextView) findViewById(R.id.tvUserLogin);
         register = (Button) findViewById(R.id.btnLogin);
+        name = (EditText) findViewById(R.id.etName);
         userName = (EditText) findViewById(R.id.etUserName);
         userPassword = (EditText) findViewById(R.id.etUserPassword);
         userPassword2 = (EditText) findViewById(R.id.etUserPassword2);
@@ -85,6 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                String strName = name.getText().toString();
                 String username = userName.getText().toString();
                 String password = userPassword.getText().toString();
                 String confirm_password = userPassword2.getText().toString();
@@ -103,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (conMgr.getActiveNetworkInfo() != null
                             && conMgr.getActiveNetworkInfo().isAvailable()
                             && conMgr.getActiveNetworkInfo().isConnected()) {
-                        checkRegister(username, password, confirm_password, email);
+                        checkRegister(strName, username, password, confirm_password, email);
                     } else {
                         Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
                     }
@@ -113,7 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void checkRegister(final String username, final String password, final String confirm_password,final String email) {
+    private void checkRegister(final String strName, final String username, final String password, final String confirm_password, final String email) {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
         pDialog.setMessage("Register ...");
@@ -167,6 +169,7 @@ public class RegisterActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
+                params.put("nama", strName);
                 params.put("username", username);
                 params.put("password", password);
                 params.put("confirm_password", confirm_password);

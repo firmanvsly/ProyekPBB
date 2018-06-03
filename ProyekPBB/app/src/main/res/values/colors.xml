@@ -4,7 +4,8 @@
     <color name="dark_grey">#424242</color>
     <color name="medium_grey">#9E9E9E</color>
     <color name="button_grey">#757575</color>
-    <color name="colorPrimary">#827717</color>
-    <color name="colorPrimaryDark">#524c00</color>
-    <color name="colorAccent">#9e9d24</color>
+    <color name="colorPrimary">#c0babe</color>
+    <color name="colorPrimaryDark">#908a8e</color>
+    <color name="colorAccent">#c0babe</color>
+    <color name="colorText">#C0BABE</color>
 </resources>

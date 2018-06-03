@@ -13,7 +13,11 @@ public class Warnet {
         this.gambar = gambar;
     }
 
-    public int getId_warnet() {
+    public Warnet(String nama){
+        this.nama = nama;
+    }
+
+    public int getId() {
         return id_warnet;
     }
 
