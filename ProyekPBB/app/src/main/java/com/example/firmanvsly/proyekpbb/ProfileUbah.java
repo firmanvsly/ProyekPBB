@@ -1,5 +1,6 @@
 package com.example.firmanvsly.proyekpbb;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class ProfileUbah extends AppCompatActivity {
     String id;
     EditText nama, username, email;
     Button simpan;
+    ProgressDialog pDialog;
 
     public final static String TAG_ID = "id";
     public final static String TAG_NAMA = "nama";
@@ -57,6 +59,8 @@ public class ProfileUbah extends AppCompatActivity {
 
         id = getIntent().getStringExtra(TAG_ID);
 
+        pDialog = new ProgressDialog(this);
+
         checkUser();
 
         simpan.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +77,7 @@ public class ProfileUbah extends AppCompatActivity {
     }
 
     private void checkUser(){
+        showDialog();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url_profile, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -94,6 +99,7 @@ public class ProfileUbah extends AppCompatActivity {
                         nama.setText(strNama);
                         username.setText(strUser);
                         email.setText(strEmail);
+                        hideDialog();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -104,6 +110,7 @@ public class ProfileUbah extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 if(error != null){
                     Toast.makeText(getApplicationContext(), "Ada kesalahan..", Toast.LENGTH_LONG).show();
+                    hideDialog();
                 }
             }
         }){
@@ -183,5 +190,15 @@ public class ProfileUbah extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showDialog(){
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog(){
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 }

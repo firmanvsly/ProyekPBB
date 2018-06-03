@@ -28,8 +28,7 @@
             android:backgroundTint="@color/colorPrimary"
             android:hint="Nama"
             android:inputType="textPersonName"
-            android:text="Nama"
-            android:textColor="@color/colorPrimary" />
+            android:text="Nama" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -54,8 +53,7 @@
             android:backgroundTint="@color/colorPrimary"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:text="Username"
-            android:textColor="@color/colorPrimary" />
+            android:text="Username" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -80,8 +78,7 @@
             android:backgroundTint="@color/colorPrimary"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:text="Email"
-            android:textColor="@color/colorPrimary" />
+            android:text="Email" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
